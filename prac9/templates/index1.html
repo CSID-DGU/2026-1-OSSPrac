@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오픈소스소프트웨어 프로젝트 팀 소개</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <p class="tag">OPEN SOURCE SOFTWARE TEAM</p>
+            <h1>차분하고 신뢰감 있는<br>프로젝트 팀 소개 페이지</h1>
+            <p class="hero-desc">
+                Flask, HTML, CSS, Nginx 기반으로 구성된 팀 소개 웹 페이지입니다.
+                각 팀원의 역할, 기술 스택, 기여도, 포트폴리오 및 연락처를 한눈에 확인할 수 있습니다.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="project-info card">
+            <h2>프로젝트 소개</h2>
+            <p>
+                본 프로젝트는 오픈소스소프트웨어 과목의 팀 프로젝트를 소개하기 위해 제작되었습니다.
+                Python Flask를 기반으로 웹 애플리케이션을 구성하고, Nginx를 통해 운영 환경에서 안정적으로 서비스할 수 있도록 설계하였습니다.
+                사용자에게 친근하면서도 전문적인 인상을 주기 위해 팀원 소개, 역할 분담, 기술 스택, 프로젝트 기여도를 체계적으로 정리하였습니다.
+            </p>
+        </section>
+
+        <section class="team-section">
+            <div class="section-header">
+                <h2>팀원 소개</h2>
+                <p>각 팀원의 역할과 기술 역량을 확인해보세요.</p>
+            </div>
+
+            <div class="team-container">
+                {% for member in team_members %}
+                <article class="member-card">
+                    <div class="member-top">
+                        <img src="{{ member.image }}" alt="{{ member.name }} 사진" class="profile-image">
+                        <h3>{{ member.name }}</h3>
+                        <p class="role">{{ member.role }}</p>
+                    </div>
+
+                    <div class="member-body">
+                        <h4>자기소개</h4>
+                        <p>{{ member.intro }}</p>
+
+                        <h4>프로젝트 기여도</h4>
+                        <p>{{ member.contribution }}</p>
+
+                        <h4>기술 스택</h4>
+                        <div class="skill-logos">
+                            {% for skill in member.skills %}
+                            <div class="skill-item" title="{{ skill.name }}">
+                                <img src="{{ skill.logo }}" alt="{{ skill.name }} 로고">
+                                <span>{{ skill.name }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <h4>링크 및 연락처</h4>
+                        <div class="contact">
+                            <a href="{{ member.portfolio }}" target="_blank">포트폴리오</a>
+                            <a href="mailto:{{ member.email }}">이메일</a>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Open Source Software Project Team. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

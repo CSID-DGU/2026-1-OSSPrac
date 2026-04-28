@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #f4f7f8;
+    --bg-soft: #eef3f4;
+    --card-bg: rgba(255, 255, 255, 0.86);
+    --primary: #3d5a66;
+    --primary-dark: #253841;
+    --text-main: #2d3a40;
+    --text-sub: #60717a;
+    --border: #dbe5e8;
+    --shadow: 0 10px 30px rgba(37, 56, 65, 0.08);
+}
+
+body {
+    font-family: "Noto Sans KR", "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #f6f8f9 0%, #edf3f4 100%);
+    color: var(--text-main);
+    line-height: 1.8;
+}
+
+.hero {
+    background: linear-gradient(135deg, #e9f0f2 0%, #dfe8eb 100%);
+    padding: 90px 20px 70px;
+    border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tag {
+    color: var(--primary);
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.35;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+}
+
+.hero-desc {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--text-sub);
+    font-size: 17px;
+    text-align: justify;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: var(--shadow);
+}
+
+.project-info {
+    margin-bottom: 50px;
+}
+
+.project-info h2,
+.section-header h2 {
+    font-size: 30px;
+    color: var(--primary-dark);
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.project-info p,
+.member-body p {
+    text-align: justify;
+    color: var(--text-main);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header p {
+    color: var(--text-sub);
+    font-size: 16px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.member-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(37, 56, 65, 0.12);
+}
+
+.member-top {
+    padding: 28px 24px 18px;
+    text-align: center;
+    background: linear-gradient(180deg, #f7fafb 0%, #edf3f5 100%);
+    border-bottom: 1px solid var(--border);
+}
+
+.profile-image {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-bottom: 16px;
+}
+
+.member-top h3 {
+    font-size: 24px;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.role {
+    color: var(--primary);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.member-body {
+    padding: 24px;
+}
+
+.member-body h4 {
+    margin-top: 14px;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+    font-size: 17px;
+}
+
+.skill-logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f7fafb;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px 12px;
+}
+
+.skill-item img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.skill-item span {
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: 500;
+}
+
+.contact {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+    font-size: 14px;
+    transition: background 0.2s ease;
+}
+
+.contact a:hover {
+    background: var(--primary-dark);
+}
+
+.footer {
+    margin-top: 60px;
+    padding: 24px 20px;
+    text-align: center;
+    color: var(--text-sub);
+    border-top: 1px solid var(--border);
+    background: #f7fafb;
+}
+
+@media (max-width: 992px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-desc {
+        font-size: 16px;
+    }
+}

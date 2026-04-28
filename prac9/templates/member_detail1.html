@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}{{ member.name }} 상세 소개{% endblock %}
+
+{% block content %}
+
+<section class="detail-hero">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="detail-card">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-md-4 text-center">
+                            <img src="{{ member.image }}" alt="{{ member.name }} 사진" class="detail-profile-image">
+
+                            <div class="d-flex justify-content-center gap-2 mt-4">
+                                <a href="{{ member.portfolio }}" target="_blank" class="btn btn-outline-secondary rounded-pill">
+                                    <i class="bi bi-github me-1"></i>
+                                    GitHub
+                                </a>
+
+                                <a href="mailto:{{ member.email }}" class="btn btn-outline-secondary rounded-pill">
+                                    <i class="bi bi-envelope me-1"></i>
+                                    Email
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <span class="badge rounded-pill text-bg-primary-subtle text-primary mb-3">
+                                Team Member Profile
+                            </span>
+
+                            <h1 class="fw-bold mb-2">{{ member.name }}</h1>
+                            <p class="role-text fs-5 mb-4">{{ member.role }}</p>
+
+                            <h5 class="fw-bold">자기소개</h5>
+                            <p class="justify-text text-secondary">
+                                {{ member.detail_intro }}
+                            </p>
+
+                            <h5 class="fw-bold mt-4">프로젝트 기여도</h5>
+                            <p class="justify-text text-secondary">
+                                {{ member.contribution }}
+                            </p>
+
+                            <h5 class="fw-bold mt-4">기술 스택</h5>
+                            <div class="skill-logo-grid detail-skills">
+                                {% for skill in member.skills %}
+                                <div class="skill-logo-item">
+                                    <img src="{{ skill.logo }}" alt="{{ skill.name }} 로고">
+                                    <span>{{ skill.name }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="mt-5">
+                                <a href="{{ url_for('index') }}#team" class="btn btn-primary rounded-pill px-4">
+                                    <i class="bi bi-arrow-left me-1"></i>
+                                    팀 소개로 돌아가기
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-10" data-aos="fade-up">
+                <div class="content-card">
+                    <h2 class="section-title">담당 역할 상세</h2>
+
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="mini-feature">
+                                <i class="bi bi-check2-circle"></i>
+                                <h5>역할 명확화</h5>
+                                <p>팀 내에서 담당하는 기능과 책임 범위를 명확히 정의합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mini-feature">
+                                <i class="bi bi-kanban"></i>
+                                <h5>협업 관리</h5>
+                                <p>GitHub 이슈, 커밋, 코드 리뷰를 통해 협업 과정을 관리합니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="mini-feature">
+                                <i class="bi bi-rocket-takeoff"></i>
+                                <h5>프로젝트 완성도</h5>
+                                <p>각자의 전문성을 바탕으로 웹 서비스 완성도를 높입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

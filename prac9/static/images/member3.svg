@@ -1,0 +1,11 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="400" rx="48" fill="#EEF3F8"></rect>
+  <circle cx="200" cy="150" r="74" fill="#C8A27A"></circle>
+  <path d="M90 338c16-73 65-114 110-114s94 41 110 114" fill="#4D6473"></path>
+  <circle cx="174" cy="142" r="8" fill="#263A42"></circle>
+  <circle cx="226" cy="142" r="8" fill="#263A42"></circle>
+  <path d="M175 180c16 15 34 15 50 0" stroke="#263A42" stroke-width="8" fill="none" stroke-linecap="round"></path>
+  <path d="M128 114c24-62 126-70 149 2 7 21 6 39 1 56-24-42-63-58-118-48-13 2-24 0-32-10z" fill="#2E3F4A"></path>
+  <rect x="151" y="226" width="98" height="28" rx="14" fill="#DDE8EB"></rect>
+  <text x="200" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#274852">DevOps</text>
+</svg>
